@@ -1,0 +1,714 @@
+# Instincts generated from https://github.com/M-AI-SELF-ADMIN/pi-mono
+# Generated: 2026-04-02T18:49:37.268Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: pi-mono-commit-conventional
+trigger: "when writing a commit message"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: https://github.com/M-AI-SELF-ADMIN/pi-mono
+---
+
+# Pi Mono Commit Conventional
+
+## Action
+
+Use conventional commit format with prefixes: fix, docs, chore, feat, test
+
+## Evidence
+
+- 200 commits analyzed
+- Detected conventional commit pattern
+- Examples: docs: refine OSS weekend banner messaging, fix: update OSS weekend gating and messaging
+
+---
+id: pi-mono-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/M-AI-SELF-ADMIN/pi-mono
+---
+
+# Pi Mono Commit Length
+
+## Action
+
+Write moderate-length commit messages (~56 characters)
+
+## Evidence
+
+- Average commit message length: 56 chars
+- Based on 200 commits
+
+---
+id: pi-mono-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/M-AI-SELF-ADMIN/pi-mono
+---
+
+# Pi Mono Naming Files
+
+## Action
+
+Use kebab-case naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: kebab-case
+
+---
+id: pi-mono-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/M-AI-SELF-ADMIN/pi-mono
+---
+
+# Pi Mono Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: pi-mono-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/M-AI-SELF-ADMIN/pi-mono
+---
+
+# Pi Mono Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: pi-mono-arch-type-based
+trigger: "when adding new code"
+confidence: 0.8
+domain: architecture
+source: repo-analysis
+source_repo: https://github.com/M-AI-SELF-ADMIN/pi-mono
+---
+
+# Pi Mono Arch Type Based
+
+## Action
+
+Place code in the appropriate type folder (components/, services/, utils/, etc.)
+
+## Evidence
+
+- Type-based module organization detected
+- Folders: 
+
+---
+id: pi-mono-test-framework
+trigger: "when writing tests"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/M-AI-SELF-ADMIN/pi-mono
+---
+
+# Pi Mono Test Framework
+
+## Action
+
+Use vitest as the test framework
+
+## Evidence
+
+- Test framework detected: vitest
+- File pattern: *.test.ts
+
+---
+id: pi-mono-test-naming
+trigger: "when creating a test file"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/M-AI-SELF-ADMIN/pi-mono
+---
+
+# Pi Mono Test Naming
+
+## Action
+
+Name test files using the pattern: *.test.ts
+
+## Evidence
+
+- File pattern: *.test.ts
+- Consistent across test files
+
+---
+id: pi-mono-test-types
+trigger: "when planning tests for a feature"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/M-AI-SELF-ADMIN/pi-mono
+---
+
+# Pi Mono Test Types
+
+## Action
+
+Write unit, integration, e2e tests to match project standards
+
+## Evidence
+
+- Test types detected: unit, integration, e2e
+- Coverage config: no
+
+---
+id: pi-mono-workflow-feature-development
+trigger: "when implementing a new feature"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/M-AI-SELF-ADMIN/pi-mono
+---
+
+# Pi Mono Workflow Feature Development
+
+## Action
+
+Follow the feature-development workflow:
+1. Add feature implementation
+2. Add tests for feature
+3. Update documentation
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~9x per month
+- Files: packages/ai/src/*, packages/agent/src/*, packages/agent/test/*
+
+---
+id: pi-mono-workflow-feature-addition-or-major-refactor
+trigger: "when doing feature addition or major refactor"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/M-AI-SELF-ADMIN/pi-mono
+---
+
+# Pi Mono Workflow Feature Addition Or Major Refactor
+
+## Action
+
+Follow the feature-addition-or-major-refactor workflow:
+1. Update or create implementation files in src/core or src/providers
+2. Update or create documentation files in docs/
+3. Update or create example files in examples/
+4. Update or create test files in test/ or test/suite/
+5. Update CHANGELOG.md
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: packages/coding-agent/src/core/**/*.ts, packages/coding-agent/docs/**/*.md, packages/coding-agent/examples/**/*.ts
+
+---
+id: pi-mono-workflow-bugfix-with-changelog
+trigger: "when doing bugfix with changelog"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/M-AI-SELF-ADMIN/pi-mono
+---
+
+# Pi Mono Workflow Bugfix With Changelog
+
+## Action
+
+Follow the bugfix-with-changelog workflow:
+1. Update implementation file(s) to fix the bug
+2. Update or add a test file to cover the bug
+3. Update CHANGELOG.md
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: packages/*/src/**/*.ts, packages/*/test/**/*.test.ts, packages/*/CHANGELOG.md
+
+---
+id: pi-mono-workflow-test-suite-expansion
+trigger: "when doing test suite expansion"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/M-AI-SELF-ADMIN/pi-mono
+---
+
+# Pi Mono Workflow Test Suite Expansion
+
+## Action
+
+Follow the test-suite-expansion workflow:
+1. Create or update test files in test/ or test/suite/
+2. Optionally update related documentation (e.g., test README)
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: packages/coding-agent/test/**/*.test.ts, packages/coding-agent/test/suite/**/*.test.ts, packages/coding-agent/test/suite/README.md
+
+---
+id: pi-mono-workflow-documentation-update
+trigger: "when doing documentation update"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/M-AI-SELF-ADMIN/pi-mono
+---
+
+# Pi Mono Workflow Documentation Update
+
+## Action
+
+Follow the documentation-update workflow:
+1. Update or create documentation files in docs/
+2. Optionally update README.md or AGENTS.md
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: packages/coding-agent/docs/**/*.md, README.md, AGENTS.md
+
+---
+id: pi-mono-workflow-dependency-bump
+trigger: "when doing dependency bump"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/M-AI-SELF-ADMIN/pi-mono
+---
+
+# Pi Mono Workflow Dependency Bump
+
+## Action
+
+Follow the dependency-bump workflow:
+1. Update package-lock.json and/or package.json for the affected package
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: package-lock.json, packages/*/package.json, packages/*/package-lock.json
+
+---
+id: pi-mono-workflow-release-cycle
+trigger: "when doing release cycle"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/M-AI-SELF-ADMIN/pi-mono
+---
+
+# Pi Mono Workflow Release Cycle
+
+## Action
+
+Follow the release-cycle workflow:
+1. Update CHANGELOG.md files for all packages
+2. Update package.json and package-lock.json for all packages
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: packages/*/CHANGELOG.md, packages/*/package.json, packages/*/package-lock.json
+
+---
+id: pi-mono-workflow-ci-config-update
+trigger: "when doing ci config update"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/M-AI-SELF-ADMIN/pi-mono
+---
+
+# Pi Mono Workflow Ci Config Update
+
+## Action
+
+Follow the ci-config-update workflow:
+1. Update files in .github/ or scripts/
+2. Optionally update related documentation
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: .github/**/*.yml, .github/**/*.json, .github/APPROVED_CONTRIBUTORS
+
+---
+id: pi-mono-instinct-file-naming
+trigger: "When creating or renaming a file"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: M-AI-SELF-ADMIN/pi-mono
+---
+
+# Pi Mono Instinct File Naming
+
+## Action
+
+Use kebab-case for file names
+
+## Evidence
+
+- Pattern in namingConventions.files: kebab-case
+- Observed in packages/coding-agent/examples/extensions/custom-provider-anthropic/package.json
+
+---
+id: pi-mono-instinct-function-naming
+trigger: "When defining a function"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: M-AI-SELF-ADMIN/pi-mono
+---
+
+# Pi Mono Instinct Function Naming
+
+## Action
+
+Use camelCase for function names
+
+## Evidence
+
+- Pattern in namingConventions.functions: camelCase
+
+---
+id: pi-mono-instinct-class-naming
+trigger: "When defining a class"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: M-AI-SELF-ADMIN/pi-mono
+---
+
+# Pi Mono Instinct Class Naming
+
+## Action
+
+Use PascalCase for class names
+
+## Evidence
+
+- Pattern in namingConventions.classes: PascalCase
+
+---
+id: pi-mono-instinct-constant-naming
+trigger: "When defining a constant"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: M-AI-SELF-ADMIN/pi-mono
+---
+
+# Pi Mono Instinct Constant Naming
+
+## Action
+
+Use SCREAMING_SNAKE_CASE for constant names
+
+## Evidence
+
+- Pattern in namingConventions.constants: SCREAMING_SNAKE_CASE
+
+---
+id: pi-mono-instinct-import-style
+trigger: "When importing modules"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: M-AI-SELF-ADMIN/pi-mono
+---
+
+# Pi Mono Instinct Import Style
+
+## Action
+
+Use relative import paths
+
+## Evidence
+
+- importStyle: relative
+- Seen in source files under packages/
+
+---
+id: pi-mono-instinct-export-style
+trigger: "When exporting modules or functions"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: M-AI-SELF-ADMIN/pi-mono
+---
+
+# Pi Mono Instinct Export Style
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- exportStyle: named
+- Seen in source files under packages/
+
+---
+id: pi-mono-instinct-test-file-pattern
+trigger: "When creating a test file"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: M-AI-SELF-ADMIN/pi-mono
+---
+
+# Pi Mono Instinct Test File Pattern
+
+## Action
+
+Name the file with the pattern *.test.ts
+
+## Evidence
+
+- testing.filePattern: *.test.ts
+- Seen in packages/coding-agent/test/**/*.test.ts
+
+---
+id: pi-mono-instinct-test-framework
+trigger: "When writing or configuring tests"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: M-AI-SELF-ADMIN/pi-mono
+---
+
+# Pi Mono Instinct Test Framework
+
+## Action
+
+Use Vitest as the testing framework
+
+## Evidence
+
+- testing.framework: vitest
+- Seen in packages/agent/vitest.config.ts
+
+---
+id: pi-mono-instinct-test-types
+trigger: "When designing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: M-AI-SELF-ADMIN/pi-mono
+---
+
+# Pi Mono Instinct Test Types
+
+## Action
+
+Write unit, integration, or e2e tests as appropriate
+
+## Evidence
+
+- testing.testTypes: [unit, integration, e2e]
+- Seen in commit examples and test file structure
+
+---
+id: pi-mono-instinct-git-commit-format
+trigger: "When making a commit"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: M-AI-SELF-ADMIN/pi-mono
+---
+
+# Pi Mono Instinct Git Commit Format
+
+## Action
+
+Use conventional commit prefixes (fix, docs, chore, feat, test) and keep message around 56 characters
+
+## Evidence
+
+- commits.type: conventional
+- commits.prefixes: [fix, docs, chore, feat, test]
+- commits.averageLength: 56
+- Seen in commit: fix(ai): emit missing responses toolcall delta closes #2745
+
+---
+id: pi-mono-instinct-feature-workflow
+trigger: "When adding a significant new feature or refactoring a subsystem"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: M-AI-SELF-ADMIN/pi-mono
+---
+
+# Pi Mono Instinct Feature Workflow
+
+## Action
+
+Update/create implementation, documentation, examples, tests, and CHANGELOG.md in the relevant package
+
+## Evidence
+
+- workflow: feature-addition-or-major-refactor
+- commit sequence and files in workflow example
+
+---
+id: pi-mono-instinct-bugfix-workflow
+trigger: "When fixing a bug and documenting it"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: M-AI-SELF-ADMIN/pi-mono
+---
+
+# Pi Mono Instinct Bugfix Workflow
+
+## Action
+
+Update implementation, add/update a test, and update CHANGELOG.md in the relevant package
+
+## Evidence
+
+- workflow: bugfix-with-changelog
+- commit sequence and files in workflow example
+
+---
+id: pi-mono-instinct-test-expansion-workflow
+trigger: "When improving or adding to test coverage"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: M-AI-SELF-ADMIN/pi-mono
+---
+
+# Pi Mono Instinct Test Expansion Workflow
+
+## Action
+
+Create or update test files in test/ or test/suite/, and optionally update related documentation
+
+## Evidence
+
+- workflow: test-suite-expansion
+- commit sequence and files in workflow example
+
+---
+id: pi-mono-instinct-docs-workflow
+trigger: "When clarifying, expanding, or correcting documentation"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: M-AI-SELF-ADMIN/pi-mono
+---
+
+# Pi Mono Instinct Docs Workflow
+
+## Action
+
+Update or create documentation files in docs/, optionally update README.md or AGENTS.md
+
+## Evidence
+
+- workflow: documentation-update
+- commit sequence and files in workflow example
+
+---
+id: pi-mono-instinct-dependency-bump-workflow
+trigger: "When a dependency needs to be updated for security or compatibility"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: M-AI-SELF-ADMIN/pi-mono
+---
+
+# Pi Mono Instinct Dependency Bump Workflow
+
+## Action
+
+Update package-lock.json and/or package.json for the affected package
+
+## Evidence
+
+- workflow: dependency-bump
+- commit sequence and files in workflow example
+
+---
+id: pi-mono-instinct-release-cycle-workflow
+trigger: "When preparing for or performing a new release"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: M-AI-SELF-ADMIN/pi-mono
+---
+
+# Pi Mono Instinct Release Cycle Workflow
+
+## Action
+
+Update CHANGELOG.md and package.json/package-lock.json for all packages
+
+## Evidence
+
+- workflow: release-cycle
+- commit sequence and files in workflow example
+
+---
+id: pi-mono-instinct-ci-config-update-workflow
+trigger: "When changing CI/CD, contributor, or workflow settings"
+confidence: 0.8
+domain: workflow
+source: repo-analysis
+source_repo: M-AI-SELF-ADMIN/pi-mono
+---
+
+# Pi Mono Instinct Ci Config Update Workflow
+
+## Action
+
+Update files in .github/ or scripts/, optionally update related documentation
+
+## Evidence
+
+- workflow: ci-config-update
+- commit sequence and files in workflow example
+
