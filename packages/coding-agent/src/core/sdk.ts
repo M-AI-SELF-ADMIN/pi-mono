@@ -86,12 +86,7 @@ export interface CreateAgentSessionResult {
 
 // Re-exports
 
-export {
-	type AgentSessionRuntimeBootstrap,
-	AgentSessionRuntimeHost,
-	type CreateAgentSessionRuntimeOptions,
-	createAgentSessionRuntime,
-} from "./agent-session-runtime.js";
+export * from "./agent-session-runtime.js";
 export type {
 	ExtensionAPI,
 	ExtensionCommandContext,
@@ -318,6 +313,17 @@ export async function createAgentSession(options: CreateAgentSessionOptions = {}
 				return payload;
 			}
 			return runner.emitBeforeProviderRequest(payload);
+		},
+		onResponse: async (response, _model) => {
+			const runner = extensionRunnerRef.current;
+			if (!runner?.hasHandlers("after_provider_response")) {
+				return;
+			}
+			await runner.emit({
+				type: "after_provider_response",
+				status: response.status,
+				headers: response.headers,
+			});
 		},
 		sessionId: sessionManager.getSessionId(),
 		transformContext: async (messages) => {
